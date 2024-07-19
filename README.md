@@ -1,1 +1,1 @@
-# todo-rest-app-nestjs-tsoc24
+# nestjs-todo-rest-app-tsoc24
