@@ -14,8 +14,15 @@ datasource db {
 }
 
 model Todo {
-  id        Int      @id @default(autoincrement())
-  task      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          Int        @id @default(autoincrement())
+  task        String
+  description String?
+  status      TodoStatus
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+enum TodoStatus {
+  DONE
+  ACTIVE
 }
