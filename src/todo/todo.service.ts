@@ -10,7 +10,7 @@ export class TodoService {
 
   async create(createTodoDto: CreateTodoDto) {
     try {
-      let data: Prisma.TodoCreateInput = {
+      const data: Prisma.TodoCreateInput = {
         description: createTodoDto.description,
         task: createTodoDto.task,
         status: 'ACTIVE',
@@ -34,11 +34,16 @@ export class TodoService {
     });
   }
 
-  update(id: number, updateTodoDto: UpdateTodoDto) {
-    return `This action updates a #${id} todo`;
+  async update(id: number, updateTodoDto: UpdateTodoDto) {
+    return this.databaseService.todo.update({
+      where: {
+        id: id,
+      },
+      data: updateTodoDto,
+    });
   }
 
-  remove(id: number) {
+  async remove(id: number) {
     return this.databaseService.todo.delete({
       where: {
         id: id,
