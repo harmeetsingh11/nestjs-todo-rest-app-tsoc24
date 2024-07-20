@@ -26,8 +26,12 @@ export class TodoService {
     return this.databaseService.todo.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} todo`;
+  async findOne(id: number) {
+    return this.databaseService.todo.findFirst({
+      where: {
+        id: id,
+      },
+    });
   }
 
   update(id: number, updateTodoDto: UpdateTodoDto) {
@@ -35,6 +39,10 @@ export class TodoService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} todo`;
+    return this.databaseService.todo.delete({
+      where: {
+        id: id,
+      },
+    });
   }
 }
