@@ -4,14 +4,14 @@ Welcome to the NestJS Todo REST API project. This application provides a robust,
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [API Endpoints](#api-endpoints)
-4. [Live Swagger API](#live-swagger-api)
-5. [Tech Stack](#tech-stack)
-6. [Installation & Setup](#installation--setup)
-7. [Running the Application](#running-the-application)
-8. [Testing the API](#testing-the-api)
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [API Endpoints](#api-endpoints)
+- [Live Swagger API](#live-swagger-api)
+- [Tech Stack](#tech-stack)
+- [Installation & Setup](#installation--setup)
+- [Running the Application](#running-the-application)
+- [Testing the API](#testing-the-api)
 
 ## Project Overview
 
