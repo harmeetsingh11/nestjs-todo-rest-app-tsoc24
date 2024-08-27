@@ -1,73 +1,129 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Todo REST API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Welcome to the NestJS Todo REST API project. This application provides a robust, `RESTful` API for managing todos and tasks, complete with user authentication. Built using modern technologies like `NestJS`, `Prisma`, `PostgreSQL`, `Swagger`, and `TypeScript`, this project is designed for scalability and ease of use.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Table of Contents
 
-## Description
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [API Endpoints](#api-endpoints)
+4. [Live Swagger API](#live-swagger-api)
+5. [Tech Stack](#tech-stack)
+6. [Installation & Setup](#installation--setup)
+7. [Running the Application](#running-the-application)
+8. [Testing the API](#testing-the-api)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Project Overview
 
-## Installation
+This is a Todo RESTful API application built as part of the [Timechain Summer of Code](https://tsoc.dev/) (TSoC'24) program. It provides a simple and effective way for users to manage their tasks with user authentication features. Users can create, read, update, and delete their tasks, with all data securely managed in a PostgreSQL database.
 
-```bash
-$ pnpm install
-```
+## Features
 
-## Running the app
+- User Authentication (Register/Login)
+- CRUD operations for Todos/Tasks
+- Swagger API documentation
+- Type-safe code with TypeScript
+- Seamless integration with PostgreSQL via Prisma
+- Supports API testing with ThunderClient and Postman
 
-```bash
-# development
-$ pnpm run start
+## API Endpoints
 
-# watch mode
-$ pnpm run start:dev
+### Todo
 
-# production mode
-$ pnpm run start:prod
-```
+- **POST** `/todo` - Create a new Todo/Task
+- **GET** `/todo` - Retrieve all of the user's Todos/Tasks
+- **GET** `/todo/{id}` - Retrieve a specific Todo/Task by ID
+- **PATCH** `/todo/{id}` - Update a specific Todo/Task by ID
+- **DELETE** `/todo/{id}` - Delete a specific Todo/Task by ID
 
-## Test
+### Auth
 
-```bash
-# unit tests
-$ pnpm run test
+- **POST** `/auth/register` - Register a new user
+- **POST** `/auth/login` - Login with user email and password
 
-# e2e tests
-$ pnpm run test:e2e
+## Live Swagger API
 
-# test coverage
-$ pnpm run test:cov
-```
+You can access the live Swagger API documentation at: [https://nestjs-todo-rest-app-tsoc24.vercel.app/swagger](https://nestjs-todo-rest-app-tsoc24.vercel.app/swagger)
 
-## Support
+![Swagger-UI](https://github.com/user-attachments/assets/b3a54c8c-b4ef-49c8-bdcb-c551ab1577b2)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+## Tech Stack
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **NestJS** - A progressive Node.js framework for building efficient, reliable, and scalable server-side applications.
+- **Prisma** - An open-source ORM for Node.js and TypeScript that helps manage database schemas and migrations.
+- **PostgreSQL** - A powerful, open-source object-relational database system.
+- **Swagger** - A tool for designing, building, documenting, and consuming RESTful web services.
+- **TypeScript** - A strongly typed programming language that builds on JavaScript.
+- **ThunderClient & Postman** - Tools for testing and developing APIs.
 
-## License
+## Installation & Setup
 
-Nest is [MIT licensed](LICENSE).
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+### Installation
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/harmeetsingh11/nestjs-todo-rest-app-tsoc24.git
+   cd nestjs-todo-rest-app-tsoc24
+   ```
+
+2. **Install Dependencies**
+
+   Using pnpm:
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Set Up Environment Variables**
+
+   - Create a `.env` file in the root directory.
+   - Add the following environment variables to the `.env` file. Replace `<YOUR PGADMIN PASSWORD>` with your local pgAdmin password and `<YOUR DATABASE NAME>` with your desired database name. Use any string for the JWT secret.
+
+     ```
+     DATABASE_URL="postgresql://postgres:<YOUR PGADMIN PASSWORD>@localhost:5432/<YOUR DATABASE NAME>?schema=public"
+     JWT_SECRET="<YOUR JWT SECRET>"
+     ```
+
+     **Example `.env` file:**
+
+     ```
+     DATABASE_URL="postgresql://postgres:mysecretpassword@localhost:5432/mydatabase?schema=public"
+     JWT_SECRET="mysecretjwt"
+     ```
+
+4. **Run Database Migrations**
+
+   Using Prisma to push your database schema:
+
+   ```bash
+   pnpx prisma migrate dev --name init
+   ```
+
+## Running the Application
+
+1. **Start the Development Server**
+
+   Using pnpm:
+
+   ```bash
+   pnpm run start:dev
+   ```
+
+2. **Access the Application**
+
+   - The application should be running on [http://localhost:3000](http://localhost:3000)
+   - Swagger documentation is accessible at [http://localhost:3000/swagger](http://localhost:3000/swagger)
+
+## Testing the API
+
+You can test the API endpoints using tools like `ThunderClient` or `Postman`. 
